@@ -7,28 +7,31 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <title>Odpowiedzi</title>
 </head>
 <body>
-    <h2>Oto lista gości na przyjęciu</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Imię i nazwisko</th>
-                <th>Adres e-mail</th>
-                <th>Numer telefonu</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (PartyInvites.Models.GuestResponse r in Model)
-            {
+    <div class="card-body">
+        <h2>Oto lista gości na przyjęciu</h2>
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
                 <tr>
-                    <td>@r.Name</td>
-                    <td>@r.Email</td>
-                    <td>@r.Phone</td>
+                    <th>Imię i nazwisko</th>
+                    <th>Adres e-mail</th>
+                    <th>Numer telefonu</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (PartyInvites.Models.GuestResponse r in Model)
+                {
+                    <tr>
+                        <td>@r.Name</td>
+                        <td>@r.Email</td>
+                        <td>@r.Phone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
